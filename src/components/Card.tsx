@@ -2,16 +2,16 @@ import { useCartStore } from "../store/CartStore";
 import cartImg from "../assets/carrinho.svg";
 
 const CardItem = () => {
-  const [items, addToCart, isOpen, close, open, cart] = useCartStore(
-    (state) => [
+  const [items, addToCart, isOpen, close, open, cart, removeFromCart] =
+    useCartStore((state) => [
       state.availableItems,
       state.addToCart,
       state.isOpen,
       state.close,
       state.open,
       state.cart,
-    ]
-  );
+      state.removeFromCart,
+    ]);
 
   const sum = cart.reduce((acc, item) => acc + item.price, 0);
 
@@ -81,7 +81,12 @@ const CardItem = () => {
                     R$: {item.price}
                   </span>
                 </div>
-                <button className="text-xl text-white cursor-pointer font-bold w-4 h-4 border-none bg-transparent absolute top-2 right-0">
+                <button
+                  onClick={() => {
+                    removeFromCart(item.id);
+                  }}
+                  className="text-xl text-white cursor-pointer font-bold w-4 h-4 border-none bg-transparent absolute top-2 right-0"
+                >
                   X
                 </button>
               </li>
