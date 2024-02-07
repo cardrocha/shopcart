@@ -1,30 +1,48 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Screenshot da aplicação](public/shopcart.png)
 
-Currently, two official plugins are available:
+# ShopCart - Carrinho de Compras - em ----construção----
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O projeto ShopCart é uma aplicação web que demonstra um carrinho de compras simples. A aplicação é construída utilizando Next.js, TypeScript, Tailwind CSS e gerenciamento de estado com Zustand.
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Renderização da API:** A aplicação renderiza dados de uma API simulada para exibir produtos disponíveis.
+- **Carrinho de Compras:** Os usuários podem adicionar itens ao carrinho de compras.
+- **Soma do Valor Total:** A aplicação calcula dinamicamente o valor total dos itens no carrinho.
+- **Gestão de Estado com Zustand:** O estado da aplicação é gerenciado de forma eficiente utilizando Zustand, facilitando a atualização e compartilhamento de dados entre componentes.
 
-- Configure the top-level `parserOptions` property like this:
+## Tecnologias Utilizadas
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- **React.js**: Biblioteca React utilizado para a construção da aplicação.
+- **TypeScript**: Adiciona tipagem estática ao JavaScript, aumentando a robustez e a manutenibilidade do código.
+- **Tailwind CSS**: Framework de CSS utilizado para estilização dos componentes, proporcionando uma experiência de desenvolvimento mais rápida e consistente.
+- **Zustand**: Biblioteca de gerenciamento de estado para React, tornando o compartilhamento de estado entre componentes simples e eficiente.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Como Executar
+
+1. Clone o repositório do projeto:
+
+```bash
+git clone https://github.com/seu-usuario/shopcart.git
+cd shopcart
+Instale as dependências:
+bash
+Copy code
+npm install
+# ou
+yarn install
+Inicie o servidor de desenvolvimento:
+bash
+Copy code
+npm run dev
+# ou
+yarn dev
+Acesse a aplicação em seu navegador através do endereço http://localhost:3000.
+Contribuição
+Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests ou abrir issues para reportar bugs ou sugerir novas funcionalidades.
+
+Licença
+Este projeto está licenciado sob a MIT License.
+
