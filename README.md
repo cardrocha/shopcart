@@ -4,7 +4,7 @@
 
 # ShopCart - Carrinho de Compras - em ----construção----
 
-O projeto ShopCart é uma aplicação web que demonstra um carrinho de compras simples. A aplicação é construída utilizando Next.js, TypeScript, Tailwind CSS e gerenciamento de estado com Zustand.
+O projeto ShopCart é uma aplicação web que demonstra um carrinho de compras simples. A aplicação é construída utilizando React.js, TypeScript, Tailwind CSS e gerenciamento de estado com Zustand.
 
 ## Funcionalidades
 
