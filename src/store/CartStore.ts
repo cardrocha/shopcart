@@ -10,7 +10,7 @@ interface Item {
 
 type CartStore = {
   availableItems: Item[];
-  cart: Item[]; 
+  cart: Item[];
   addToCart: (item: Item) => void;
   removeFromCart: (id: number) => void;
   isOpen: boolean;
@@ -30,10 +30,19 @@ export const useCartStore = create<CartStore>((set) => {
   })();
 
   return {
-    cart: [], 
+    cart: [],
     availableItems: [],
     isOpen: false,
-    addToCart: (item) => set((state) => ({ cart: [...state.cart, item] })),
+    addToCart: (item: Item) => {
+      set((state: CartStore) => {
+        const itemInCart = state.cart.find((cartItem) => cartItem.id === item.id);
+        if (itemInCart) {
+          alert("Este item já está no carrinho!");
+          return state;
+        }  
+        return { ...state, cart: [...state.cart, item] };
+      });
+    },    
     removeFromCart: (id) =>
       set((state) => ({ cart: state.cart.filter((item) => item.id !== id) })),
     open: () => {
@@ -44,4 +53,3 @@ export const useCartStore = create<CartStore>((set) => {
     },
   };
 });
-
