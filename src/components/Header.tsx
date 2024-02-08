@@ -11,7 +11,7 @@ const Header = () => {
         <nav className="flex flex-row items-center gap-6">
           <a
             onClick={open}
-            className="flex items-center gap-1 text-xl font-semibold bg-slate-700 hover:bg-slate-800 text-white py-1 px-4 border-2 border-solid border-slate-900 rounded-lg"
+            className="flex items-center gap-1 text-xl font-semibold bg-slate-600 hover:bg-slate-700 text-white py-1 px-4 border-2 border-solid border-slate-700 rounded-lg"
             href="#"
           >
             {items.length} produto(s)
