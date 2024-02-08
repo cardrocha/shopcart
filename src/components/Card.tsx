@@ -22,11 +22,11 @@ const CardItem = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 text-lg text-white mb-14 mt-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 text-lg text-white mb-14 mt-14">
         {items.map((item) => (
           <div
             key={item.id}
-            className="flex flex-col items-center justify-between rounded-lg bg-white p-4 gap-2 border-2 border-slate-900"
+            className="flex flex-col items-center justify-between rounded-lg bg-white p-4 gap-4 border-2 border-slate-900"
           >
             <h1 className="text-2xl text-center font-bold text-black">
               {item.title}
@@ -61,7 +61,7 @@ const CardItem = () => {
           onClick={close}
           className="absolute top-0 left-0 w-full h-full bg-slate-900 opacity-70"
         />
-        <aside className="max-w-[360px] w-full bg-slate-700 z-10 pt-10 px-4 overflow-y-auto">
+        <aside className="max-w-[300px] md:max-w-[360px] lg:max-w-[360px] xl:max-w-[360px] w-full bg-slate-700 z-10 pt-10 px-4 overflow-y-auto">
           <ul>
             {cart.map((item) => (
               <li
