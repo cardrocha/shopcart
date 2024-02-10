@@ -1,5 +1,6 @@
 import { useCartStore } from "../store/CartStore";
 import cartImg from "../assets/carrinho.svg";
+import { toast } from "sonner";
 
 const CardItem = () => {
   const [items, addToCart, isOpen, close, open, cart, removeFromCart] =
@@ -42,6 +43,7 @@ const CardItem = () => {
             <button
               onClick={() => {
                 addToCart(item);
+                toast.success("Item adicionado ao carrinho com sucesso!");
                 open();
               }}
               className="flex items-center justify-center gap-4 bg-amber-500 hover:bg-amber-700 transition-all duration-300 px-5 py-1 rounded-md font-bold w-full"
@@ -84,6 +86,7 @@ const CardItem = () => {
                 <button
                   onClick={() => {
                     removeFromCart(item.id);
+                    toast.error("Item removido do carrinho com sucesso!");
                   }}
                   className="text-xl text-white cursor-pointer font-bold w-4 h-4 border-none bg-transparent absolute top-2 right-0"
                 >
