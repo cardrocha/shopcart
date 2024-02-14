@@ -2,7 +2,7 @@
 
 ![Screenshot da aplicação](public/shopcart.png)
 
-# ShopCart - Carrinho de Compras - em ----construção----
+# ShopCart - Carrinho de Compras
 
 O projeto ShopCart é uma aplicação web que demonstra um carrinho de compras simples. A aplicação é construída utilizando React.js, TypeScript, Tailwind CSS e gerenciamento de estado com Zustand.
 
@@ -12,6 +12,8 @@ O projeto ShopCart é uma aplicação web que demonstra um carrinho de compras s
 - **Carrinho de Compras:** Os usuários podem adicionar itens ao carrinho de compras.
 - **Soma do Valor Total:** A aplicação calcula dinamicamente o valor total dos itens no carrinho.
 - **Gestão de Estado com Zustand:** O estado da aplicação é gerenciado de forma eficiente utilizando Zustand, facilitando a atualização e compartilhamento de dados entre componentes.
+- **Checkout e Pagamento:** O projeto oferece funcionalidades básicas de checkout e pagamento.
+- **Feedback de pagamento:** Após o submissão do pagamento, é exibida uma mensagem de confirmação para o usuário, informando número do pedido a forma de pagamento utilizada, tempo de espera determinado pela forma de pagamento.
 
 ## Tecnologias Utilizadas
 
@@ -19,6 +21,10 @@ O projeto ShopCart é uma aplicação web que demonstra um carrinho de compras s
 - **TypeScript**: Adiciona tipagem estática ao JavaScript, aumentando a robustez e a manutenibilidade do código.
 - **Tailwind CSS**: Framework de CSS utilizado para estilização dos componentes, proporcionando uma experiência de desenvolvimento mais rápida e consistente.
 - **Zustand**: Biblioteca de gerenciamento de estado para React, tornando o compartilhamento de estado entre componentes simples e eficiente.
+- **LocalStorage** - API para armazenamento local de dados.
+- **Formik**: adiciona tipagem estática ao JavaScript, aumentando a robustez e a manutenibilidade do código.
+- **Yup**: uma biblioteca que permite validar os dados dos formulários.
+- **react-input-mask**: Adiciona máscaras personalizados aos campo de input.
 
 ## Como Executar
 
