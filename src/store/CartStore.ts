@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-interface Item {
+export interface Item {
   id: number;
   title: string;
   price: number;
@@ -8,7 +8,7 @@ interface Item {
   image: string;
 }
 
-type CartStore = {
+export type CartStore = {
   availableItems: Item[];
   cart: Item[];
   addToCart: (item: Item) => void;
@@ -16,18 +16,38 @@ type CartStore = {
   isOpen: boolean;
   open: () => void;
   close: () => void;
+  removeAllFromCart: () => void;
 };
 
 export const useCartStore = create<CartStore>((set) => {
+  const initCart = () => {
+    const storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+      return JSON.parse(storedCart);
+    } else {
+      return [];
+    }
+  };
+
   (async () => {
     const response = await fetch("https://fakestoreapi.com/products");
     const products = await response.json();
-    set({ availableItems: products });
 
     if (products.length === 0) {
-      set({ cart: [], isOpen: false });
+      set({ availableItems: [], cart: [], isOpen: false });
+    } else {
+      set({
+        availableItems: products,
+        cart: initCart(),
+        isOpen: false,
+      });
     }
   })();
+
+  const removeAllFromCart = () => {
+    localStorage.removeItem("cart");
+    set((state) => ({ ...state, cart: [], isOpen: false }));
+  };
 
   return {
     cart: [],
@@ -35,21 +55,29 @@ export const useCartStore = create<CartStore>((set) => {
     isOpen: false,
     addToCart: (item: Item) => {
       set((state: CartStore) => {
-        const itemInCart = state.cart.find((cartItem) => cartItem.id === item.id);
+        const itemInCart = state.cart.find(
+          (cartItem) => cartItem.id === item.id
+        );
         if (itemInCart) {
-          alert("Este item já está no carrinho!");
           return state;
-        }  
-        return { ...state, cart: [...state.cart, item] };
+        }
+        const newCart = [...state.cart, item];
+        localStorage.setItem("cart", JSON.stringify(newCart));
+        return { ...state, cart: newCart };
       });
-    },    
+    },
     removeFromCart: (id) =>
-      set((state) => ({ cart: state.cart.filter((item) => item.id !== id) })),
+      set((state) => {
+        const newCart = state.cart.filter((item) => item.id !== id);
+        localStorage.setItem("cart", JSON.stringify(newCart));
+        return { ...state, cart: newCart };
+      }),
     open: () => {
       set({ isOpen: true });
     },
     close: () => {
       set({ isOpen: false });
     },
+    removeAllFromCart,
   };
 });

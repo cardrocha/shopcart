@@ -3,10 +3,11 @@ export default {
   content: [
     './index.html',
     './src/**/*.{js,jsx,ts,tsx}',
-  ],
+  ],  
   theme: {
     extend: {},
   },
-  plugins: [],
+  // eslint-disable-next-line no-undef
+  plugins: [require('daisyui')],
 }
 
