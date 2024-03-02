@@ -130,6 +130,7 @@ const Checkout = () => {
 
   const removerTodosItemDoCarrinho = () => {
     removeAllFromCart()
+    alert("Obrigado por escolher a Shopcart e volte sempre!")
   };
 
   return (
