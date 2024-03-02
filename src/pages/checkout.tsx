@@ -150,7 +150,7 @@ const Checkout = () => {
         {orderDetails ? (
           <div className="bg-slate-500 text-xl leading-10 text-black font-semibold border-2 border-slate-800 rounded-lg my-72 p-4">
             <p>
-              Senhor, <span className="text-2xl">{orderDetails.buyerName}</span>
+              Senhor(a), <span className="text-2xl">{orderDetails.buyerName}</span>
               !
             </p>
             <p>
