@@ -2,9 +2,9 @@
 
 ![Screenshot da aplicação](public/shopcart.png)
 
-# ShopCart - Carrinho de Compras
+# CartShop - Carrinho de Compras
 
-O projeto ShopCart é uma aplicação web que demonstra um carrinho de compras simples. A aplicação é construída utilizando React.js, TypeScript, Tailwind CSS e gerenciamento de estado com Zustand.
+O projeto CartShop é uma aplicação web que demonstra um carrinho de compras simples. A aplicação é construída utilizando React.js, TypeScript, Tailwind CSS e gerenciamento de estado com Zustand.
 
 ## Funcionalidades
 
@@ -45,7 +45,7 @@ Copy code
 npm run dev
 # ou
 yarn dev
-Acesse a aplicação em seu navegador através do endereço http://localhost:3000.
+Acesse a aplicação em seu navegador através do endereço http://localhost:5173.
 Contribuição
 Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests ou abrir issues para reportar bugs ou sugerir novas funcionalidades.
 
